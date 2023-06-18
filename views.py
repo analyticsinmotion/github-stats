@@ -28,7 +28,7 @@ response = requests.get(repos_url, headers=headers)
 if response.status_code == 200:
     output = response.json()
 else:
-    print(f"Failed to fetch traffic stats for repository '{repo_name}'. Error: {response.status_code}")
+    print(f"Failed to fetch traffic stats for repository. Error: {response.status_code}")
 
 
 data = []
