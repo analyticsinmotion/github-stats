@@ -1,3 +1,4 @@
+import os
 import requests
 import csv
 from datetime import datetime
@@ -6,7 +7,8 @@ from datetime import datetime
 organization = "analyticsinmotion"
 
 # Personal access token with repo and read:org scopes
-token = $TOKEN
+#token = $TOKEN
+token = os.environ.get('TOKEN')
 
 # Base URL for GitHub REST API
 base_url = "https://api.github.com"
