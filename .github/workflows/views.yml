@@ -1,0 +1,30 @@
+name: Extract Views on GitHub and Append to CSV
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  extract-views:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Personal Access Token
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}    
+    
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt  # If you have any Python dependencies, list them in a requirements.txt file
+
+      - name: Run Python script to extract views
+        run: python views.py  
+
