@@ -12,7 +12,10 @@ jobs:
     steps:
       - name: Personal Access Token
         env:
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}    
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Use $TOKEN variable in your commands or scripts
+          echo $TOKEN
     
       - name: Checkout repository
         uses: actions/checkout@v2
