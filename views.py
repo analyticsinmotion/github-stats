@@ -59,15 +59,22 @@ def main():
                     current_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
                     latest_views = [{'timestamp': current_date, 'count': 0, 'uniques': 0}]
 
-                current_date = datetime.utcnow().strftime('%Y-%m-%d')
+                #current_date = datetime.utcnow().strftime('%Y-%m-%d')
                 datetime_object = datetime.strptime(latest_views[0]['timestamp'], '%Y-%m-%dT%H:%M:%SZ')
                 date_only = datetime_object.date()
-                views = latest_views[0]['count']
-                unique_visitors = latest_views[0]['uniques']
+
+                
+                #views = latest_views[0]['count']
+                #unique_visitors = latest_views[0]['uniques']
 
                 if date_only != datetime.now().date():
-                    current_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+                    #current_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+                    current_date = datetime.utcnow().strftime('%Y-%m-%d')
                     latest_views = [{'timestamp': current_date, 'count': 0, 'uniques': 0}]
+                    date_only = current_date
+
+                views = latest_views[0]['count']
+                unique_visitors = latest_views[0]['uniques']
                 
                 result = f"{date_only},{repo_name},{views},{unique_visitors}"
                 data.append(result)
