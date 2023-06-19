@@ -2,6 +2,7 @@ import os
 import requests
 import csv
 from datetime import datetime
+from github import Github
 
 # GitHub organization name
 organization = "analyticsinmotion"
