@@ -12,10 +12,12 @@ jobs:
     steps:
       - name: Personal Access Token
         env:
-          TOKEN: ${{ secrets.DATA_TOKEN }}
+          # TOKEN: ${{ secrets.DATA_TOKEN }}
+          DATA_TOKEN: ${{ secrets.DATA_TOKEN }}
         run: |
           # Use $TOKEN variable in your commands or scripts
-          echo $TOKEN
+          # echo $TOKEN
+          export TOKEN=$DATA_TOKEN
     
       - name: Checkout repository
         uses: actions/checkout@v3
