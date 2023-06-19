@@ -91,3 +91,28 @@ with open("data/views.csv", "a", newline="") as csv_file:
 print("Data appended to the CSV file successfully.")
 
 
+
+
+
+
+# Access the GitHub repository using the access token
+g = Github(os.getenv('TOKEN'))
+repo = g.get_repo('analyticsinmotion/github-stats')  
+
+# Specify the file path within the repository
+file_path = 'data/views.csv'
+
+# Read the existing content of the file
+file_contents = repo.get_contents(file_path)
+existing_data = file_contents.decoded_content.decode().splitlines()
+
+# Append new data to the existing content
+# new_data = [['new', 'row', 'of', 'data'], ['another', 'row', 'of', 'data']]
+new_data = data
+updated_data = existing_data + [','.join(row) for row in new_data]
+
+# Encode the updated content
+updated_file_contents = '\n'.join(updated_data).encode()
+
+# Commit the changes to the file in the repository
+repo.update_file(file_path, "Appending data to CSV", updated_file_contents, file_contents.sha)
