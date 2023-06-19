@@ -55,6 +55,9 @@ def main():
             traffic_stats = fetch_traffic_stats(repo_url, headers)
             if traffic_stats:
                 latest_views = traffic_stats[-1:]
+
+                print(latest_views)
+                
                 if not latest_views:
                     current_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
                     latest_views = [{'timestamp': current_date, 'count': 0, 'uniques': 0}]
