@@ -57,7 +57,7 @@ def main():
             if traffic_stats:
                 latest_views = traffic_stats[-1:]
 
-                print(latest_views)
+                print(repo_name, latest_views)
                 
                 if not latest_views:
                     current_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
