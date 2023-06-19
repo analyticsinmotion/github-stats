@@ -85,6 +85,8 @@ def main():
             print(f"Failed to fetch traffic stats for repository '{repo_name}': {str(e)}")
 
     print(data)
+
+    print(output)
     
     g = Github(os.getenv('TOKEN'))
     repo = g.get_repo('analyticsinmotion/github-stats')
