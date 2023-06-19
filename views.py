@@ -109,7 +109,8 @@ existing_data = file_contents.decoded_content.decode().splitlines()
 # Append new data to the existing content
 # new_data = [['new', 'row', 'of', 'data'], ['another', 'row', 'of', 'data']]
 new_data = data
-updated_data = existing_data + [','.join(row) for row in new_data]
+# updated_data = existing_data + [','.join(row) for row in new_data]
+updated_data = existing_data + new_data
 
 # Encode the updated content
 updated_file_contents = '\n'.join(updated_data).encode()
