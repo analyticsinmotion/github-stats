@@ -74,6 +74,8 @@ def main():
         except Exception as e:
             print(f"Failed to fetch traffic stats for repository '{repo_name}': {str(e)}")
 
+    print(data)
+    
     g = Github(os.getenv('TOKEN'))
     repo = g.get_repo('analyticsinmotion/github-stats')
     file_path = 'data/views.csv'
