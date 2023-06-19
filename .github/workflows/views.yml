@@ -1,16 +1,16 @@
-name: Extract Views on GitHub and Append to CSV
+#name: Extract Views on GitHub and Append to CSV
 
-on:
-  push:
-    branches:
-      - main  
+#on:
+#  push:
+#    branches:
+#      - main  
 
-jobs:
-  extract-views:
-    runs-on: ubuntu-latest
+#jobs:
+#  extract-views:
+#    runs-on: ubuntu-latest
 
-    steps:    
-      - name: Checkout repository
+#    steps:    
+#      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Python
