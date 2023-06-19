@@ -9,16 +9,7 @@ jobs:
   extract-views:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Personal Access Token
-        env:
-          # TOKEN: ${{ secrets.DATA_TOKEN }}
-          DATA_TOKEN: ${{ secrets.DATA_TOKEN }}
-        run: |
-          # Use $TOKEN variable in your commands or scripts
-          # echo $TOKEN
-          export TOKEN=$DATA_TOKEN
-    
+    steps:    
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -31,4 +22,6 @@ jobs:
         run: pip install -r requirements.txt  # If you have any Python dependencies, list them in a requirements.txt file
 
       - name: Run Python script to extract views
+        env: 
+          TOKEN: ${{ secrets.DATA_TOKEN }}        
         run: python views.py  
