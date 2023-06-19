@@ -4,100 +4,79 @@ import csv
 from datetime import datetime
 from github import Github
 
-# GitHub organization name
-organization = "analyticsinmotion"
-
-# Personal access token with repo and read:org scopes
-token = os.environ.get('TOKEN')
-
-# Base URL for GitHub REST API
-base_url = "https://api.github.com"
-
-# GitHub API endpoint for organization repositories
-repos_url = f"{base_url}/orgs/{organization}/repos"
-
-# Request headers with the access token
-headers = {
-    "Authorization": f"Token {token}",
-    "Accept": "application/vnd.github.v3+json"
-}
-
-# Fetch organization repositories
-response = requests.get(repos_url, headers=headers)
-
-if response.status_code == 200:
-    output = response.json()
-else:
-    print(f"Failed to fetch traffic stats for repository. Error: {response.status_code}")
-
-
-data = []
-
-# Public Repositories to exclude
-exclude_repos = ["discussions", ".github"]
-
-# Iterate over the repositories
-for repo in output:
-    repo_name = repo["name"]
-    repo_url = repo["url"]
-    repo_private = repo["private"]
-    
-    # Exclude specified repositories
-    if repo_name in exclude_repos:
-        continue
-
-    # Exclude private repositories
-    if repo_private:
-        continue    
-    
-    # Get the traffic stats for the repository
+def fetch_traffic_stats(repo_url, headers):
     traffic_url = f"{repo_url}/traffic/views"
     response = requests.get(traffic_url, headers=headers)
-    traffic_stats = response.json()
+    if response.status_code == 200:
+        traffic_stats = response.json()
+        return traffic_stats['views']
+    else:
+        raise Exception(f"Failed to fetch traffic stats for repository. Error: {response.status_code}")
 
-    # Extract the relevant traffic information
-    views_summary = traffic_stats['views']
-    
-    # Get the most recent viewing stats for the repo.
-    latest_views = views_summary[-1:]
-    #print(latest_views)
-    
-    # Should the latest record be blank (i.e. the list is empty []) add the current date stamp with a 0 view 0 unique data set
-    if not latest_views:
-        current_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
-        latest_views = [{'timestamp': current_date, 'count': 0, 'uniques': 0}]
-    
-    datetime_object = datetime.strptime(latest_views[0]['timestamp'], '%Y-%m-%dT%H:%M:%SZ')
-    date_only = datetime_object.date()
-    views = latest_views[0]['count']
-    unique_visitors = latest_views[0]['uniques']
-    result = str(date_only) + "," + repo_name + "," + str(views) + "," + str(unique_visitors)
-    
-    # Add the result to the list variable data 
-    data.append(result)
+def update_csv_file(repo, file_path, data):
+    file_contents = repo.get_contents(file_path)
+    existing_data = file_contents.decoded_content.decode().splitlines()
+    updated_data = existing_data + data
 
-print(data)
+    updated_file_contents = '\n'.join(updated_data).encode()
 
+    repo.update_file(file_path, "Appending data to CSV", updated_file_contents, file_contents.sha)
 
+def main():
+    organization = "analyticsinmotion"
+    token = os.environ.get('TOKEN')
+    base_url = "https://api.github.com"
+    repos_url = f"{base_url}/orgs/{organization}/repos"
 
+    headers = {
+        "Authorization": f"Token {token}",
+        "Accept": "application/vnd.github.v3+json"
+    }
 
+    response = requests.get(repos_url, headers=headers)
+    if response.status_code == 200:
+        output = response.json()
+    else:
+        print(f"Failed to fetch organization repositories. Error: {response.status_code}")
+        return
 
-# Access the GitHub repository using the access token
-g = Github(os.getenv('TOKEN'))
-repo = g.get_repo('analyticsinmotion/github-stats')  
+    data = []
+    exclude_repos = ["discussions", ".github"]
 
-# Specify the file path within the repository
-file_path = 'data/views.csv'
+    for repo in output:
+        repo_name = repo["name"]
+        repo_url = repo["url"]
+        repo_private = repo["private"]
 
-# Read the existing content of the file
-file_contents = repo.get_contents(file_path)
-existing_data = file_contents.decoded_content.decode().splitlines()
+        if repo_name in exclude_repos or repo_private:
+            continue
 
-# Append new data to the existing content
-updated_data = existing_data + data
+        try:
+            traffic_stats = fetch_traffic_stats(repo_url, headers)
+            if traffic_stats:
+                latest_views = traffic_stats[-1:]
+                if not latest_views:
+                    current_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
+                    latest_views = [{'timestamp': current_date, 'count': 0, 'uniques': 0}]
 
-# Encode the updated content
-updated_file_contents = '\n'.join(updated_data).encode()
+                datetime_object = datetime.strptime(latest_views[0]['timestamp'], '%Y-%m-%dT%H:%M:%SZ')
+                date_only = datetime_object.date()
+                views = latest_views[0]['count']
+                unique_visitors = latest_views[0]['uniques']
+                result = f"{date_only},{repo_name},{views},{unique_visitors}"
+                data.append(result)
+        except Exception as e:
+            print(f"Failed to fetch traffic stats for repository '{repo_name}': {str(e)}")
 
-# Commit the changes to the file in the repository
-repo.update_file(file_path, "Appending data to CSV", updated_file_contents, file_contents.sha)
+    g = Github(os.getenv('TOKEN'))
+    repo = g.get_repo('analyticsinmotion/github-stats')
+    file_path = 'data/views.csv'
+
+    try:
+        update_csv_file(repo, file_path, data)
+        print("Data appended to CSV file successfully.")
+    except Exception as e:
+        print(f"Failed to update CSV file: {str(e)}")
+
+if __name__ == "__main__":
+    main()
