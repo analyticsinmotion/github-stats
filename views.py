@@ -41,7 +41,8 @@ def main():
         return
 
     data = []
-    exclude_repos = ["discussions", ".github"]
+    #exclude_repos = ["discussions", ".github"]
+    exclude_repos = []
 
     for repo in output:
         repo_name = repo["name"]
