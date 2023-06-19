@@ -30,4 +30,3 @@ jobs:
 
       - name: Run Python script to extract views
         run: python views.py  
-
