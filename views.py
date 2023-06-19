@@ -78,19 +78,6 @@ for repo in output:
 
 print(data)
 
-# Open the CSV file in append mode
-#with open(".github/assets/data/views.csv", "a", newline="") as csv_file:
-with open("data/views.csv", "a", newline="") as csv_file:
-    writer = csv.writer(csv_file)
-
-    # Write each list item as a separate row in the CSV file
-    for item in data:
-        values = item.split(",")
-        writer.writerow(values)
-
-print("Data appended to the CSV file successfully.")
-
-
 
 
 
@@ -107,10 +94,7 @@ file_contents = repo.get_contents(file_path)
 existing_data = file_contents.decoded_content.decode().splitlines()
 
 # Append new data to the existing content
-# new_data = [['new', 'row', 'of', 'data'], ['another', 'row', 'of', 'data']]
-new_data = data
-# updated_data = existing_data + [','.join(row) for row in new_data]
-updated_data = existing_data + new_data
+updated_data = existing_data + data
 
 # Encode the updated content
 updated_file_contents = '\n'.join(updated_data).encode()
