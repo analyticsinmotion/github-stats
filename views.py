@@ -59,7 +59,7 @@ for repo in output:
     
     # Get the most recent viewing stats for the repo.
     latest_views = views_summary[-1:]
-    print(latest_views)
+    #print(latest_views)
     
     # Should the latest record be blank (i.e. the list is empty []) add the current date stamp with a 0 view 0 unique data set
     if not latest_views:
@@ -74,6 +74,8 @@ for repo in output:
     
     # Add the result to the list variable data 
     data.append(result)
+
+print(data)
 
 # Open the CSV file in append mode
 with open(".github/assets/data/views.csv", "a", newline="") as csv_file:
