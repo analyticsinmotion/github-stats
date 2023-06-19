@@ -78,7 +78,8 @@ for repo in output:
 print(data)
 
 # Open the CSV file in append mode
-with open(".github/assets/data/views.csv", "a", newline="") as csv_file:
+#with open(".github/assets/data/views.csv", "a", newline="") as csv_file:
+with open("data/views.csv", "a", newline="") as csv_file:
     writer = csv.writer(csv_file)
 
     # Write each list item as a separate row in the CSV file
