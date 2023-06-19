@@ -7,7 +7,8 @@ from github import Github
 def fetch_traffic_stats(repo_url, headers):
     traffic_url = f"{repo_url}/traffic/views"
     response = requests.get(traffic_url, headers=headers)
-    if response.status_code == 200:
+    #if response.status_code == 200:
+    if response.status_code >= 1:
         traffic_stats = response.json()
         return traffic_stats['views']
     else:
