@@ -7,8 +7,7 @@ from github import Github
 def fetch_traffic_stats(repo_url, headers):
     traffic_url = f"{repo_url}/traffic/views"
     response = requests.get(traffic_url, headers=headers)
-    #if response.status_code == 200:
-    if response.status_code >= 1:
+    if response.status_code == 200:
         traffic_stats = response.json()
         return traffic_stats['views']
     else:
@@ -42,8 +41,7 @@ def main():
         return
 
     data = []
-    #exclude_repos = ["discussions", ".github"]
-    exclude_repos = []
+    exclude_repos = ["discussions", ".github"]
 
     for repo in output:
         repo_name = repo["name"]
@@ -58,8 +56,7 @@ def main():
             if traffic_stats:
                 latest_views = traffic_stats[-1:]
 
-                #print(repo_name, latest_views)
-                print(traffic_stats)
+                print(repo_name, latest_views)
                 
                 if not latest_views:
                     current_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
