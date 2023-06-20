@@ -33,6 +33,39 @@ The following table provides an overview of the data that will be extracted and 
 
 <br /><br />
 
+<!-- DATA DICTIONARY -->
+## Data Dictionary
+
+<details>
+  <summary><h3>&nbsp;Views and Unique Users</h3></summary>
+  
+
+The <a href="https://github.com/analyticsinmotion/github-stats/blob/main/data/views.csv">views.csv</a> file contains time series information relating to views and unique visitors to each repository for each day.
+
+**File Details**
+<br />
+*Filename:* views
+<br />
+*Extension:* .csv
+<br />
+*Delimiter:* Comma (,)
+<br />
+*Header:* True
+
+
+**Structure**
+
+| Column Name  | Data Type | Description |
+| ------------- | ------------- | ------------- |
+| date  | Date (yyyy-mm-dd) | The date when the data was recorded |
+| repo  | Text | The name of the repository |
+| views  | Numeric | The number of repository views |
+| visitors  | Numeric | The number of unique visitors to the repository |
+
+</details>
+
+<br /><br />
+
 <!-- DIRECTORY STRUCTURE -->
 ## Directory Structure
 
