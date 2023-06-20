@@ -1,3 +1,12 @@
+# This python script accesses the GitHub API to extract the 
+# number of views and unique visitors for all public repos.
+# Any public repo can be excluded by adding its name to the
+# exclude_repos list in the script. Once the data has been 
+# extracted it will be appened to the views.csv file that is
+# located in the data directory of the main branch. This file
+# is scheduled to run once a day at midnight using cron. The 
+# scheduling code is located in .github/workflows/views.yml
+
 import os
 import requests
 import csv
@@ -62,13 +71,8 @@ def main():
                     current_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
                     latest_views = [{'timestamp': current_date, 'count': 0, 'uniques': 0}]
 
-                #current_date = datetime.utcnow().strftime('%Y-%m-%d')
                 datetime_object = datetime.strptime(latest_views[0]['timestamp'], '%Y-%m-%dT%H:%M:%SZ')
                 date_only = datetime_object.date()
-
-                
-                #views = latest_views[0]['count']
-                #unique_visitors = latest_views[0]['uniques']
 
                 if date_only != datetime.now().date():
                     #current_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
