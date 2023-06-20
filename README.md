@@ -29,6 +29,6 @@ This project is designed to capture and store data related to user activity (vie
     ├── .gitignore             
     ├── README.md              
     ├── requirements.txt                    
-    ├── LICENSE.md                      
+    ├── LICENSE                      
     └── views.py                       
 <br />
