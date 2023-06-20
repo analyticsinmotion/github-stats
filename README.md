@@ -18,6 +18,21 @@ This project is designed to capture and store data related to user activity (vie
 <br /><br />
 
 
+## Data Overview
+The following table provides an overview of the data that will be extracted and stored.
+
+| Metric  | Description | 
+| ------------- | ------------- |
+| views  | The number of views per day for each repository. |
+| unique users  | The number of unique visitors to each repository per day. |
+| clones  | TBD |
+| unique cloners  | TBD |
+| watch  | TBD |
+| fork  | TBD |
+| star  | TBD |
+
+<br /><br />
+
 <!-- DIRECTORY STRUCTURE -->
 ## Directory Structure
 
