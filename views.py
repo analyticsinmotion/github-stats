@@ -75,7 +75,6 @@ def main():
                 date_only = datetime_object.date()
 
                 if date_only != datetime.now().date():
-                    #current_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
                     current_date = datetime.utcnow().strftime('%Y-%m-%d')
                     latest_views = [{'timestamp': current_date, 'count': 0, 'uniques': 0}]
                     date_only = current_date
