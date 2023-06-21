@@ -7,6 +7,7 @@
 [![Python Version](https://img.shields.io/badge/python-3.10-blue?logo=python&logoColor=ffdd54)](https://www.python.org/downloads/)&nbsp;&nbsp;
 ![Experimental](https://img.shields.io/badge/experimental-yes-brightgreen.svg)&nbsp;&nbsp;
 [![MIT license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/analyticsinmotion/github-stats/blob/main/LICENSE)&nbsp;&nbsp;
+[![GitHub Metrics](https://github.com/analyticsinmotion/github-stats/actions/workflows/views.yml/badge.svg)](https://github.com/analyticsinmotion/github-stats/actions/workflows/views.yml)&nbsp;&nbsp;
 [![Analytics in Motion](https://raw.githubusercontent.com/analyticsinmotion/.github/main/assets/images/analytics-in-motion-github-badge-rounded.svg)](https://www.analyticsinmotion.com)
   
 </div>
