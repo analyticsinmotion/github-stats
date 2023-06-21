@@ -1,9 +1,10 @@
+# Extract GitHub views and append to CSV
 # This workflow initializes a Python environment and executes
 # the specified .py file/s at a scheduled time of midnight
 # each day. In this case the views.py file located in the
 # main branch of this repository.
 
-name: Extract GitHub views and append to CSV
+name: GitHub Metrics
 
 on:
 #  push:
@@ -11,7 +12,7 @@ on:
 #      - main  
       
   schedule:
-    - cron: '0 0 * * *'  # Runs at midnight every day
+    - cron: '30 23 * * *'  # Runs at midnight every day
 
 jobs:
   extract-views:
