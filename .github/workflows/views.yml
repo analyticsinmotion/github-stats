@@ -1,6 +1,5 @@
-# Extract GitHub views and append to CSV
 # This workflow initializes a Python environment and executes
-# the specified .py file/s at a scheduled time of midnight
+# the specified .py file/s at a scheduled time of 11:30pm
 # each day. In this case the views.py file located in the
 # main branch of this repository.
 
@@ -32,4 +31,4 @@ jobs:
       - name: Run Python script to extract views
         env: 
           TOKEN: ${{ secrets.DATA_TOKEN }}        
-        run: python views.py  
+        run: python views.py # Extract GitHub views and append to CSV  
