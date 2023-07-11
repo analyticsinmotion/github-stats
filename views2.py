@@ -89,7 +89,7 @@ def main():
     
     g = Github(os.getenv('TOKEN'))
     repo = g.get_repo('analyticsinmotion/github-stats')
-    file_path = 'data/views.csv'
+    file_path = 'data/views2.csv'
 
     try:
         update_csv_file(repo, file_path, data)
