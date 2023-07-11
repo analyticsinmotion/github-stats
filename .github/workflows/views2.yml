@@ -6,9 +6,9 @@
 name: GitHub Metrics2
 
 on:
-  push:
-    branches:
-      - main  
+#  push:
+#    branches:
+#      - main  
       
 #  schedule:
 #    - cron: '30 0 * * *'  # Runs at 12:30am UTC every day
