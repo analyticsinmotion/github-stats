@@ -11,7 +11,7 @@ on:
 #      - main  
       
   schedule:
-    - cron: '30 2 * * *'  # Runs at 12:30am UTC every day
+    - cron: '30 4 * * *'  # Runs at 12:30am UTC every day
 
 jobs:
   extract-views:
