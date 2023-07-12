@@ -80,8 +80,8 @@ def main():
                 views = 0
                 unique_visitors = 0
 
-                result = f"{date_only},{repo_name},{views},{unique_visitors}"
-                data.append(result)
+            result = f"{date_only},{repo_name},{views},{unique_visitors}"
+            data.append(result)
         except Exception as e:
             print(f"Failed to fetch traffic stats for repository '{repo_name}': {str(e)}")
 
