@@ -76,7 +76,8 @@ The <a href="https://github.com/analyticsinmotion/github-stats/blob/main/data/vi
     │       └── views.yml  
     ├── data
     │   └── views.csv 
-    ├── .gitignore             
+    ├── .gitignore
+    ├── CHANGELOG.md 
     ├── README.md              
     ├── requirements.txt                    
     ├── LICENSE                      
