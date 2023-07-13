@@ -2,15 +2,15 @@
 # number of views and unique visitors for all public repos.
 # Any public repo can be excluded by adding its name to the
 # exclude_repos list in the script. Once the data has been 
-# extracted it will be appened to the views.csv file that is
+# extracted it will append to the views.csv file that is
 # located in the data directory of the main branch. This file
-# is scheduled to run once a day at midnight using cron. The 
+# is scheduled to run once a day at 12:30am using cron. The
 # scheduling code is located in .github/workflows/views.yml
 
 import os
 import requests
 import csv
-from datetime import datetime
+from datetime import datetime, timedelta
 from github import Github
 
 def fetch_traffic_stats(repo_url, headers):
@@ -62,28 +62,26 @@ def main():
 
         try:
             traffic_stats = fetch_traffic_stats(repo_url, headers)
-            if traffic_stats:
-                latest_views = traffic_stats[-1:]
 
-                print(repo_name, latest_views)
-                
-                if not latest_views:
-                    current_date = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
-                    latest_views = [{'timestamp': current_date, 'count': 0, 'uniques': 0}]
+            check_dates_list = []
+            today = datetime.now().date()
+            yesterday = today - timedelta(days=1)
 
-                datetime_object = datetime.strptime(latest_views[0]['timestamp'], '%Y-%m-%dT%H:%M:%SZ')
-                date_only = datetime_object.date()
+            for views_stats in traffic_stats:
+                date_object = datetime.strptime(views_stats['timestamp'], '%Y-%m-%dT%H:%M:%SZ').date()
+                check_dates_list.append(date_object)
+                if date_object == yesterday:
+                    date_only = yesterday
+                    views = views_stats['count']
+                    unique_visitors = views_stats['uniques']
 
-                if date_only != datetime.now().date():
-                    current_date = datetime.utcnow().strftime('%Y-%m-%d')
-                    latest_views = [{'timestamp': current_date, 'count': 0, 'uniques': 0}]
-                    date_only = current_date
+            if yesterday not in check_dates_list:
+                date_only = yesterday
+                views = 0
+                unique_visitors = 0
 
-                views = latest_views[0]['count']
-                unique_visitors = latest_views[0]['uniques']
-                
-                result = f"{date_only},{repo_name},{views},{unique_visitors}"
-                data.append(result)
+            result = f"{date_only},{repo_name},{views},{unique_visitors}"
+            data.append(result)
         except Exception as e:
             print(f"Failed to fetch traffic stats for repository '{repo_name}': {str(e)}")
 
