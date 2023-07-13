@@ -1,5 +1,5 @@
 # This workflow initializes a Python environment and executes
-# the specified .py file/s at a scheduled time of 11:30pm
+# the specified .py file/s at a scheduled time of 12:25am
 # each day. In this case the views.py file located in the
 # main branch of this repository.
 
@@ -11,7 +11,7 @@ on:
 #      - main  
       
   schedule:
-    - cron: '45 23 * * *'  # Runs at 11:45pm UTC every day
+    - cron: '25 0 * * *'  # Runs at 12:25am UTC every day
 
 jobs:
   extract-views:
