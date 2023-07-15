@@ -6,12 +6,12 @@
 name: GitHub Metrics3
 
 on:
-#  push:
-#    branches:
-#      - main  
+  push:
+    branches:
+      - main  
       
-  schedule:
-    - cron: '45 0 * * *'  # Runs at 12:45am UTC every day
+#  schedule:
+#    - cron: '45 0 * * *'  # Runs at 12:45am UTC every day
 
 jobs:
   extract-data:
