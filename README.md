@@ -24,10 +24,10 @@ The following table provides an overview of the data that will be extracted and 
 
 | Metric  | Description | 
 | ------------- | ------------- |
-| views  | The number of views per day for each repository. |
-| unique users  | The number of unique visitors to each repository per day. |
-| clones  | TBD |
-| unique cloners  | TBD |
+| views  | A view refers to the number of times a specific page or resource within the repository has been accessed or loaded. It represents the number of times the repository's main page or any of its subpages (such as code files, issues, or pull requests) have been viewed. |
+| unique visitors  | Unique visitors represent the number of distinct individuals who have visited the repository during a specific time period. If the same user visits your repository multiple times within a specified period (typically 24 hours), they are counted as a single unique visitor. |
+| clones  | Clones refer to the number of times the repository has been copied. When someone clones your repository, they make an exact replica of the repository, including all its files, branches, commit history, and other associated data. |
+| unique cloners  | Unique cloners represent the number of distinct users who have performed at least one clone of the repository during a specific time period. Similar to unique visitors, unique cloners are counted only once, regardless of the number of clones they perform. |
 | watch  | TBD |
 | fork  | TBD |
 | star  | TBD |
