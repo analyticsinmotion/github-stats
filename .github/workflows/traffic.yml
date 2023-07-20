@@ -3,7 +3,7 @@
 # each day. In this case the traffic.py file located in the
 # main branch of this repository.
 
-name: GitHub Metrics3
+name: GitHub Metrics
 
 on:
 #  push:
