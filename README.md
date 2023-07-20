@@ -38,14 +38,14 @@ The following table provides an overview of the data that will be extracted and 
 ## Data Dictionary
 
 <details>
-  <summary><h3>&nbsp;Views and Unique Users</h3></summary>
+  <summary><h3>&nbsp;User Traffic</h3></summary>
   
 
-The <a href="https://github.com/analyticsinmotion/github-stats/blob/main/data/views.csv">views.csv</a> file contains time series information relating to views and unique visitors to each repository for each day.
+The <a href="https://github.com/analyticsinmotion/github-stats/blob/main/data/traffic.csv">traffic.csv</a> file contains time series information relating to views, unique visitors, clones and unique cloners to each repository.
 
 **File Details**
 <br />
-*Filename:* views
+*Filename:* traffic
 <br />
 *Extension:* .csv
 <br />
@@ -59,9 +59,11 @@ The <a href="https://github.com/analyticsinmotion/github-stats/blob/main/data/vi
 | Column Name  | Data Type | Description |
 | ------------- | ------------- | ------------- |
 | date  | Date (yyyy-mm-dd) | The date when the data was recorded |
-| repo  | Text | The name of the repository |
+| repository  | Text | The name of the repository |
 | views  | Numeric | The number of repository views |
-| visitors  | Numeric | The number of unique visitors to the repository |
+| unique_visitors  | Numeric | The number of unique visitors to the repository |
+| clones  | Numeric | The number of times a repository is cloned |
+| unique_cloners  | Numeric | The number of unique cloners of the repository |
 
 </details>
 
@@ -73,15 +75,15 @@ The <a href="https://github.com/analyticsinmotion/github-stats/blob/main/data/vi
     github-stats
     ├── .github           
     │   └── workflows
-    │       └── views.yml  
+    │       └── traffic.yml  
     ├── data
-    │   └── views.csv 
+    │   └── traffic.csv 
     ├── .gitignore
     ├── CHANGELOG.md 
     ├── README.md              
     ├── requirements.txt                    
     ├── LICENSE                      
-    └── views.py                       
+    └── traffic.py                       
 <br /><br />
 
 
