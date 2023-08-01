@@ -59,7 +59,7 @@ def update_csv_file(repo, file_path, data):
 
     updated_file_contents = '\n'.join(updated_data).encode()
 
-    repo.update_file(file_path, "Appending data to CSV", updated_file_contents, file_contents.sha)
+    repo.update_file(file_path, "Appending Activity Data to CSV", updated_file_contents, file_contents.sha)
 
 def main():
     organization = "analyticsinmotion"
