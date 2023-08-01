@@ -40,7 +40,6 @@ The following table provides an overview of the data that will be extracted and 
 
 <details>
   <summary><h3>&nbsp;User Traffic</h3></summary>
-  
 
 The <a href="https://github.com/analyticsinmotion/github-stats/blob/main/data/traffic.csv">traffic.csv</a> file contains time series information relating to views, unique visitors, clones and unique cloners to each repository.
 
@@ -65,6 +64,35 @@ The <a href="https://github.com/analyticsinmotion/github-stats/blob/main/data/tr
 | unique_visitors  | Numeric | The number of unique visitors to the repository |
 | clones  | Numeric | The number of times a repository is cloned |
 | unique_cloners  | Numeric | The number of unique cloners of the repository |
+
+</details>
+
+<details>
+  <summary><h3>&nbsp;User Activity</h3></summary>
+
+The <a href="https://github.com/analyticsinmotion/github-stats/blob/main/data/activity.csv">traffic.csv</a> file contains cumulative time series information relating to stars, watchers and forks for each repository.
+
+**File Details**
+<br />
+*Filename:* activity
+<br />
+*Extension:* .csv
+<br />
+*Delimiter:* Comma (,)
+<br />
+*Header:* True
+
+
+**Structure**
+
+| Column Name  | Data Type | Description |
+| ------------- | ------------- | ------------- |
+| date  | Date (yyyy-mm-dd) | The date when the data was recorded |
+| repository  | Text | The name of the repository |
+| stars  | Numeric | The number of times a repository has been starred |
+| watchers  | Numeric | The number of users watching a repository |
+| forks  | Numeric | The number of times a repository has been forked |
+
 
 </details>
 
