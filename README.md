@@ -29,9 +29,9 @@ The following table provides an overview of the data that will be extracted and 
 | unique visitors  | Unique visitors represent the number of distinct individuals who have visited the repository during a specific time period. If the same user visits your repository multiple times within a specified period (typically 24 hours), they are counted as a single unique visitor. |
 | clones  | Clones refer to the number of times the repository has been copied. When someone clones your repository, they make an exact replica of the repository, including all its files, branches, commit history, and other associated data. |
 | unique cloners  | Unique cloners represent the number of distinct users who have performed at least one clone of the repository during a specific time period. Similar to unique visitors, unique cloners are counted only once, regardless of the number of clones they perform. |
-| watch  | TBD |
-| fork  | TBD |
-| star  | TBD |
+| watch  | Watching a repository means you opt to receive notifications about its activity. This includes new issues, pull requests, and other updates. Watching is more proactive than starring, as it means you want to stay up-to-date with what's happening in the repository. This is particularly useful when you want to keep track of developments or participate in discussions related to the project. |
+| fork  | Forking a repository creates a copy of the original repository under your GitHub account. This action allows you to freely experiment with the code without affecting the original project. Forking is often the first step in contributing to an open-source project. After forking, you can make changes to the code in your forked repository, commit those changes, and then submit a "Pull Request" to the original repository, suggesting the changes you made. The maintainers of the original repository can then review your changes and decide whether to merge them into the main project. |
+| star  | When you Star a repository, you are essentially bookmarking it. This action indicates that you have an interest in the repository and want to keep track of it. Starred repositories can be easily accessed from your profile, allowing you to find them quickly. It's a way of showing appreciation or support for a project without necessarily contributing to it directly. |
 
 <br /><br />
 
@@ -75,16 +75,24 @@ The <a href="https://github.com/analyticsinmotion/github-stats/blob/main/data/tr
 
     github-stats
     ├── .github           
-    │   └── workflows
-    │       └── traffic.yml  
+    │   ├── workflows
+    │   │   └── activity.yml
+    │   │   └── traffic.yml
+    │   └── assets
+    │       └── images 
     ├── data
-    │   └── traffic.csv 
+    │   ├── activity.csv 
+    │   └── traffic.csv
+    ├── src
+    │   ├── activity.py 
+    │   └── traffic.py 
     ├── .gitignore
-    ├── CHANGELOG.md 
+    ├── CHANGELOG.md
+    ├── LICENSE  
     ├── README.md              
-    ├── requirements.txt                    
-    ├── LICENSE                      
-    └── traffic.py                       
+    └── requirements.txt                    
+
+                       
 <br /><br />
 
 
