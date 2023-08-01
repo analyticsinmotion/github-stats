@@ -1,9 +1,9 @@
 # This workflow initializes a Python environment and executes
 # the specified .py file/s at a scheduled time of 12:45am
 # each day. In this case the traffic.py file located in the
-# main branch of this repository.
+# /src directory of this repository.
 
-name: GitHub Metrics
+name: GitHub Traffic Metrics
 
 on:
 #  push:
@@ -31,4 +31,4 @@ jobs:
       - name: Run Python script to extract traffic
         env: 
           TOKEN: ${{ secrets.DATA_TOKEN }}        
-        run: python traffic.py # Extract GitHub traffic and append to CSV  
+        run: python src/traffic.py # Extract GitHub traffic and append to CSV  
