@@ -70,7 +70,7 @@ The <a href="https://github.com/analyticsinmotion/github-stats/blob/main/data/tr
 <details>
   <summary><h3>&nbsp;User Activity</h3></summary>
 
-The <a href="https://github.com/analyticsinmotion/github-stats/blob/main/data/activity.csv">traffic.csv</a> file contains cumulative time series information relating to stars, watchers and forks for each repository.
+The <a href="https://github.com/analyticsinmotion/github-stats/blob/main/data/activity.csv">activity.csv</a> file contains cumulative time series information relating to stars, watchers and forks for each repository.
 
 **File Details**
 <br />
