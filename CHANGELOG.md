@@ -3,7 +3,25 @@ This changelog file outlines a chronologically ordered list of the changes made 
 It is organized by version and release date followed by a list of Enhancements, New Features, Bug Fixes, and/or Breaking Changes.
 <br /><br />
 
-## Version 0.0.3 (Latest) 
+## Version 0.0.4 (Latest) 
+**Released:** August 2, 2023<br />
+**Tag:** v0.0.4
+
+### Breaking Changes
+
+- traffic.py has been moved from the main directory to the /src directory.
+
+### Enhancements
+
+- Added activity.py script to the /src directory for capturing the total number of stars, watchers, and forks for each repository.
+- Added activity.csv to the /data directory to store the cumulative total of stars, watchers, and forks each day.
+- Added activity.yml to the /.github/workflows directory to manage the python environment and runtime of the activity.py file.
+- Updated the README.md file to detail the new enhancements.
+
+<br /><br />
+
+
+## Version 0.0.3 
 **Released:** July 20, 2023<br />
 **Tag:** v0.0.3
 
