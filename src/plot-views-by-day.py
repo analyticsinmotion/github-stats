@@ -156,7 +156,7 @@ def save_img_to_repo():
 
     response = requests.put(url, json=payload, headers=headers)
 
-    if response.status_code == 201:
+    if response.status_code == 200:
         print('File uploaded successfully!')
     else:
         print(f'Failed to upload file. Status code: {response.status_code}, Response content: {response.json()}')
