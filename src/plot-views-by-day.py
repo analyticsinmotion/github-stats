@@ -100,7 +100,7 @@ def plot_views_by_day(dataframe_name):
     plt.savefig("plot-views-by-day.png", dpi=high_resolution_dpi)
 
     # Close the plot to avoid displaying it
-    plt.close()
+    #plt.close()
 
 
 def main():
