@@ -97,7 +97,7 @@ def plot_views_by_day(dataframe_name):
 
     # Set the dpi to a higher value for a high-resolution image
     high_resolution_dpi = 300  # You can adjust this value as needed
-    plt.savefig(".github/assets/images/plot-views-by-day.png", dpi=high_resolution_dpi)
+    plt.savefig("plot-views-by-day.png", dpi=high_resolution_dpi)
 
     # Close the plot to avoid displaying it
     plt.close()
