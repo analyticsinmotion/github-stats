@@ -32,3 +32,5 @@ jobs:
         env: 
           TOKEN: ${{ secrets.DATA_TOKEN }}        
         run: python src/plot-views-by-day.py # Extract GitHub activity and append to CSV  
+      - name: Move .png file to .github/assets/images
+        run: mv /home/runner/work/github-stats/github-stats/plot-views-by-day.png .github/assets/images/                
