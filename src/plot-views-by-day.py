@@ -114,10 +114,6 @@ def plot_views_by_day(dataframe_name):
         print(f"Error occurred while saving the plot: {e}")
 
 
-
-
-
-
     # Close the plot to avoid displaying it
     plt.close()
 
