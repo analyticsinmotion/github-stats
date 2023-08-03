@@ -101,10 +101,10 @@ def plot_views_by_day(dataframe_name):
     images_dir = os.path.abspath(os.path.join(current_dir, '../.github/assets/images'))
     plot_filename = f"plot-views-by-day.png"
     plot_path = os.path.join(images_dir, plot_filename)
+    print("Plot path for saving: " + str(plot_path))
 
     # Set the dpi to a higher value for a high-resolution image
     high_resolution_dpi = 300  # You can adjust this value as needed
-    plot_filename = f"../.github/assets/images/plot-views-by-day.png"
     plt.savefig(plot_path, dpi=high_resolution_dpi)
 
     # Close the plot to avoid displaying it
