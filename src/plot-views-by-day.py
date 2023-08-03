@@ -97,7 +97,8 @@ def plot_views_by_day(dataframe_name):
     fig.tight_layout()
 
     # Get the absolute path to the images directory
-    images_dir = os.path.abspath('../.github/assets/images')
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    images_dir = os.path.abspath(os.path.join(current_dir, '../.github/assets/images'))
     plot_filename = f"plot-views-by-day.png"
     plot_path = os.path.join(images_dir, plot_filename)
 
