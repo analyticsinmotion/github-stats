@@ -28,7 +28,7 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements-plot.txt  # Contains any dependencies that are not part of the Python standard library
-      - name: Run Python script to extract activity
+      - name: Run Python script to Generate and save plot
         env: 
           TOKEN: ${{ secrets.DATA_TOKEN }}        
         run: python src/plot-views-by-day.py # Extract GitHub activity and append to CSV  
