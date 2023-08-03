@@ -96,25 +96,16 @@ def plot_views_by_day(dataframe_name):
     # Make the chart fill out the figure better.
     fig.tight_layout()
 
-    # Get the absolute path to the images directory
-    #current_dir = os.path.dirname(os.path.abspath(__file__))
-    #images_dir = os.path.abspath(os.path.join(current_dir, '../.github/assets/images'))
-    #plot_filename = f"plot-views-by-day.png"
-    #plot_path = os.path.join(images_dir, plot_filename)
-    #print("Plot path for saving: " + str(plot_path))
-
-    g = Github(os.getenv('TOKEN'))
-    repo = g.get_repo('analyticsinmotion/github-stats')
-    file_path = '.github/assets/images/'
-    file_name = f"plot-views-by-day.png"
-    full_file_path = os.path.join(file_path, file_name)
-
-    # Now 'full_file_path' will contain the complete file path
-    print("Full File Path: " + full_file_path)
+    # Create the absolute file path for saving the image
+    assets_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".github", "assets", "images")
+    # Join the assets folder path with the file name to get the full file path
+    file_name = os.path.join(assets_folder, "plot-views-by-day.png")
+    print("Full file path: " + str(file_name))
 
     # Set the dpi to a higher value for a high-resolution image
     high_resolution_dpi = 300  # You can adjust this value as needed
-    plt.savefig(full_file_path, dpi=high_resolution_dpi)
+    #file_name = f"plot-views-by-day.png"
+    plt.savefig(file_name, dpi=high_resolution_dpi)
 
     # Close the plot to avoid displaying it
     plt.close()
