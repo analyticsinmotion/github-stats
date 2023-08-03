@@ -7,6 +7,7 @@
 
 import os
 import requests
+import base64
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
@@ -130,7 +131,7 @@ def save_img_to_repo():
 
     with open('plot-views-by-day.png', 'rb') as file:
         content = file.read()
-        base64_content = content.encode('base64')
+        base64_content = base64.b64encode(content).decode('utf-8')
 
     headers = {
         'Authorization': f'token {token}',
