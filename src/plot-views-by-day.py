@@ -97,16 +97,20 @@ def plot_views_by_day(dataframe_name):
     fig.tight_layout()
 
     # Create the absolute file path for saving the image
-    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    assets_folder = os.path.join(repo_root, ".github", "assets", "images")
+    #repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    #assets_folder = os.path.join(repo_root, ".github", "assets", "images")
     # Join the assets folder path with the file name to get the full file path
-    file_name = os.path.join(assets_folder, "plot-views-by-day.png")
-    print("Full file path: " + str(file_name))
+    #file_name = os.path.join(assets_folder, "plot-views-by-day.png")
+    #print("Full file path: " + str(file_name))
 
     # Set the dpi to a higher value for a high-resolution image
     high_resolution_dpi = 300  # You can adjust this value as needed
-    #file_name = f"plot-views-by-day.png"
-    plt.savefig(file_name, dpi=high_resolution_dpi)
+    file_name = f"plot-views-by-day.png"
+    try:
+        plt.savefig(file_name, dpi=high_resolution_dpi)
+        print(f"Plot successfully saved as '{file_name}'")
+    except Exception as e:
+        print(f"Error occurred while saving the plot: {e}")
 
     # Close the plot to avoid displaying it
     plt.close()
