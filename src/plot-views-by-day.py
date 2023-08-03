@@ -97,7 +97,8 @@ def plot_views_by_day(dataframe_name):
     fig.tight_layout()
 
     # Create the absolute file path for saving the image
-    assets_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".github", "assets", "images")
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    assets_folder = os.path.join(repo_root, ".github", "assets", "images")
     # Join the assets folder path with the file name to get the full file path
     file_name = os.path.join(assets_folder, "plot-views-by-day.png")
     print("Full file path: " + str(file_name))
