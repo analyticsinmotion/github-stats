@@ -109,6 +109,8 @@ def plot_views_by_day(dataframe_name):
     try:
         plt.savefig(file_name, dpi=high_resolution_dpi)
         print(f"Plot successfully saved as '{file_name}'")
+        file_path = os.path.abspath(file_name)
+        print(f"Plot successfully saved at: '{file_path}'")
     except Exception as e:
         print(f"Error occurred while saving the plot: {e}")
 
