@@ -137,7 +137,7 @@ def save_img_to_repo():
     else:
         sha = None  # File does not exist yet
 
-    with open('plot-views-by-day.png', 'rb') as file:
+    with open('plot-views-by-day2.png', 'rb') as file:
         content = file.read()
         base64_content = base64.b64encode(content).decode('utf-8')
 
