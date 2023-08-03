@@ -6,6 +6,7 @@
 # .github/workflows/plot-views-by-day.yml file.
 
 import os
+import requests
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
@@ -111,8 +112,42 @@ def plot_views_by_day(dataframe_name):
     except Exception as e:
         print(f"Error occurred while saving the plot: {e}")
 
+
+
+
+
+
     # Close the plot to avoid displaying it
     plt.close()
+
+def save_img_to_repo():
+    token = os.environ.get('TOKEN')
+    repo_name = 'github-stats'
+    repo_owner = 'analyticsinmotion'
+    file_path = '.github/assets/images/plot-views-by-day.png'
+
+    url = f'https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}'
+
+    with open('plot-views-by-day.png', 'rb') as file:
+        content = file.read()
+        base64_content = content.encode('base64')
+
+    headers = {
+        'Authorization': f'token {token}',
+    }
+
+    payload = {
+        'message': 'Upload plot-views-by-day.png',
+        'content': base64_content,
+    }
+
+    response = requests.put(url, json=payload, headers=headers)
+
+    if response.status_code == 201:
+        print('File uploaded successfully!')
+    else:
+        print(
+            f'Failed to upload file. Status code: {response.status_code}, Error message: {response.json()["message"]}')
 
 
 def main():
@@ -127,8 +162,11 @@ def main():
     # Step 3: - Transform the data so it is ready for plotting
     df = transform_df_for_plot(df)
 
-    # Step 4: - Create the plot, and save it
+    # Step 4: - Create the plot, and save it locally
     plot_views_by_day(df)
+
+    # Step 5: - Upload the file to the GitHub repository using GitHub API
+    save_img_to_repo()
 
 
 if __name__ == "__main__":
