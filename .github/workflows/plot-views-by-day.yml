@@ -6,12 +6,12 @@
 name: GitHub Plot - Views by Day
 
 on:
-#  push:
-#    branches:
-#      - main  
+  push:
+    branches:
+      - main  
       
-  schedule:
-    - cron: '25 0 * * *'  # Runs at 12:25am UTC every day
+ # schedule:
+ #   - cron: '25 0 * * *'  # Runs at 12:25am UTC every day
 
 jobs:
   extract-data:
