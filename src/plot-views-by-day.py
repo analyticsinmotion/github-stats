@@ -129,6 +129,22 @@ def save_img_to_repo():
 
     url = f'https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}'
 
+    # Fetch the latest commit SHA for the branch you want to update
+    branch = 'main'
+    commit_url = f'https://api.github.com/repos/{repo_owner}/{repo_name}/git/refs/heads/{branch}'
+    headers = {
+        'Authorization': f'token {token}',
+    }
+
+    response = requests.get(commit_url, headers=headers)
+    if response.status_code == 200:
+        sha = response.json()['object']['sha']
+    else:
+        print(
+            f'Failed to get latest commit SHA. Status code: {response.status_code}, Error message: {response.json()["message"]}')
+        exit()
+
+
     with open('plot-views-by-day.png', 'rb') as file:
         content = file.read()
         base64_content = base64.b64encode(content).decode('utf-8')
@@ -140,6 +156,7 @@ def save_img_to_repo():
     payload = {
         'message': 'Upload plot-views-by-day.png',
         'content': base64_content,
+        'sha': sha,  # Add the SHA value here
     }
 
     response = requests.put(url, json=payload, headers=headers)
