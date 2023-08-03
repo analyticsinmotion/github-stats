@@ -96,16 +96,17 @@ def plot_views_by_day(dataframe_name):
     # Make the chart fill out the figure better.
     fig.tight_layout()
 
-    save_path = "./.github/assets/images/plot-views-by-day.png"
+
 
     # Set the dpi to a higher value for a high-resolution image
-    high_resolution_dpi = 300  # You can adjust this value as needed
-    #file_name = f".github/assets/images/plot-views-by-day.png"
-    #file_name = f"plot-views-by-day.png"
+    high_resolution_dpi = 300
+
+    file_name = f"plot-views-by-day.png"
+
     try:
-        plt.savefig(save_path, dpi=high_resolution_dpi)
-        print(f"Plot successfully saved as '{save_path}'")
-        file_path = os.path.abspath(save_path)
+        plt.savefig(file_name, dpi=high_resolution_dpi)
+        print(f"Plot successfully saved as '{file_name}'")
+        file_path = os.path.abspath(file_name)
         print(f"Plot successfully saved at: '{file_path}'")
     except Exception as e:
         print(f"Error occurred while saving the plot: {e}")
