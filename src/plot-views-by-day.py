@@ -5,6 +5,7 @@
 # using cron. The scheduling code is located in
 # .github/workflows/plot-views-by-day.yml file.
 
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 from datetime import datetime, timedelta
@@ -95,10 +96,15 @@ def plot_views_by_day(dataframe_name):
     # Make the chart fill out the figure better.
     fig.tight_layout()
 
+    # Get the absolute path to the images directory
+    images_dir = os.path.abspath('../.github/assets/images')
+    plot_filename = f"plot-views-by-day.png"
+    plot_path = os.path.join(images_dir, plot_filename)
+
     # Set the dpi to a higher value for a high-resolution image
     high_resolution_dpi = 300  # You can adjust this value as needed
     plot_filename = f"../.github/assets/images/plot-views-by-day.png"
-    plt.savefig(plot_filename, dpi=high_resolution_dpi)
+    plt.savefig(plot_path, dpi=high_resolution_dpi)
 
     # Close the plot to avoid displaying it
     plt.close()
