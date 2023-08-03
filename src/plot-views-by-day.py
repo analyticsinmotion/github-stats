@@ -126,38 +126,33 @@ def save_img_to_repo():
     repo_name = 'github-stats'
     repo_owner = 'analyticsinmotion'
     file_path = '.github/assets/images/plot-views-by-day.png'
+    branch = 'main'
 
     url = f'https://api.github.com/repos/{repo_owner}/{repo_name}/contents/{file_path}'
-
-    # Fetch the latest commit SHA for the branch you want to update
-    branch = 'main'
-    commit_url = f'https://api.github.com/repos/{repo_owner}/{repo_name}/git/refs/heads/{branch}'
     headers = {
         'Authorization': f'token {token}',
     }
 
-    response = requests.get(commit_url, headers=headers)
+    # Fetch the current file information (SHA) to handle conflicts
+    response = requests.get(url, headers=headers)
     if response.status_code == 200:
-        sha = response.json()['object']['sha']
+        file_info = response.json()
+        sha = file_info['sha']
     else:
-        print(
-            f'Failed to get latest commit SHA. Status code: {response.status_code}, Error message: {response.json()["message"]}')
-        exit()
-
+        sha = None  # File does not exist yet
 
     with open('plot-views-by-day.png', 'rb') as file:
         content = file.read()
         base64_content = base64.b64encode(content).decode('utf-8')
 
-    headers = {
-        'Authorization': f'token {token}',
+    payload = {
+        'message': 'Update plot-views-by-day.png',
+        'content': base64_content,
+        'branch': branch,
     }
 
-    payload = {
-        'message': 'Upload plot-views-by-day.png',
-        'content': base64_content,
-        'sha': sha,  # Add the SHA value here
-    }
+    if sha is not None:
+        payload['sha'] = sha  # Provide the SHA if the file already exists
 
     response = requests.put(url, json=payload, headers=headers)
 
