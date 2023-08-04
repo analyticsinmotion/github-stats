@@ -134,6 +134,6 @@ Once the relevant data has been collected, further analysis can be conducted to 
 As an example, one of the metrics we are interested in understanding at is the when people are viewing our repositories. Utilizing a 12 month subset of the data we have collected, we are able to create a static bar chart (updated daily), plotting the average repository views for each day of the week. Initial analysis indicates that there are two to four times more views on weekday comparative to the weekends, with most views typically occurring on a Monday.
 
 <div align="center">
-<img src=".github/assets/images/plot-views-by-day.png" alt="Analytics in Motion - Average repository view by day" width=70% height=70%>
+<img src=".github/assets/images/plot-views-by-day.png" alt="Analytics in Motion - Average repository view by day" width=80% height=80%>
 </div>
 
