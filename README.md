@@ -123,4 +123,17 @@ The <a href="https://github.com/analyticsinmotion/github-stats/blob/main/data/ac
                        
 <br /><br />
 
+<!-- Visualizations -->
+## Visualizations
+
+Once the relevant data has been collected, further analysis can be conducted to look for any underlying trends. Visualizations can also be created to help identify and monitor these trends.
+
+
+### Example - User Views by Day of the Week
+
+As an example, one of the metrics we are interested in understanding at is the when people are viewing our repositories. Utilizing a 12 month subset of the data we have collected, we are able to create a static bar chart (updated daily), plotting the average repository views for each day of the week. Initial analysis indicates that there are two to four times more views on weekday comparative to the weekends, with most views typically occurring on a Monday.
+
+<div align="center">
+<img src=".github/assets/images/plot-views-by-day.png" alt="Analytics in Motion - Average repository view by day" width=70% height=70%>
+</div>
 
