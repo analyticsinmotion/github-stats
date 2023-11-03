@@ -5,7 +5,6 @@
 <div align="center">
   
 [![Python Version](https://img.shields.io/badge/python-3.10-blue?logo=python&logoColor=ffdd54)](https://www.python.org/downloads/)&nbsp;&nbsp;
-![Experimental](https://img.shields.io/badge/experimental-yes-brightgreen.svg)&nbsp;&nbsp;
 [![MIT license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/analyticsinmotion/github-stats/blob/main/LICENSE)&nbsp;&nbsp;
 [![GitHub Metrics](https://github.com/analyticsinmotion/github-stats/actions/workflows/traffic.yml/badge.svg)](https://github.com/analyticsinmotion/github-stats/actions/workflows/traffic.yml)&nbsp;&nbsp;
 [![GitHub Activity Metrics](https://github.com/analyticsinmotion/github-stats/actions/workflows/activity.yml/badge.svg)](https://github.com/analyticsinmotion/github-stats/actions/workflows/activity.yml)&nbsp;&nbsp;
