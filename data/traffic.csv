@@ -1816,3 +1816,14 @@ date,repository,views,unique_visitors,clones,unique_cloners
 2024-01-09,github-stats,5,1,12,8
 2024-01-09,DMARCParser.jl,0,0,7,4
 2024-01-09,julia-packages-data,2,2,6,4
+2024-01-10,chatgpt-python-wrapper,0,0,0,0
+2024-01-10,chatgpt-images-r-shiny,2,2,1,1
+2024-01-10,add-chatgpt-to-microsoft-word,24,21,1,1
+2024-01-10,create-images-with-dall-e-in-microsoft-word,22,4,2,2
+2024-01-10,chatgpt-sentiment-analysis-in-excel,2,2,4,3
+2024-01-10,add-gpt-chatbot-to-microsoft-word,18,10,2,2
+2024-01-10,werpy,6,5,3,2
+2024-01-10,integrate-palm-into-word,0,0,0,0
+2024-01-10,github-stats,0,0,14,8
+2024-01-10,DMARCParser.jl,1,1,2,2
+2024-01-10,julia-packages-data,0,0,6,4
