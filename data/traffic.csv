@@ -8115,3 +8115,16 @@ date,repository,views,unique_visitors,clones,unique_cloners
 2025-07-22,julia-packages-data,0,0,1,1
 2025-07-22,werx,0,0,1,1
 2025-07-22,symrank,0,0,0,0
+2025-07-23,chatgpt-python-wrapper,1,1,0,0
+2025-07-23,chatgpt-images-r-shiny,4,2,0,0
+2025-07-23,add-chatgpt-to-microsoft-word,3,3,0,0
+2025-07-23,create-images-with-dall-e-in-microsoft-word,2,1,1,1
+2025-07-23,chatgpt-sentiment-analysis-in-excel,0,0,0,0
+2025-07-23,add-gpt-chatbot-to-microsoft-word,0,0,0,0
+2025-07-23,werpy,6,4,2,2
+2025-07-23,integrate-palm-into-word,0,0,1,1
+2025-07-23,github-stats,0,0,6,4
+2025-07-23,DMARCParser.jl,1,1,1,1
+2025-07-23,julia-packages-data,0,0,2,2
+2025-07-23,werx,0,0,0,0
+2025-07-23,symrank,0,0,1,1
