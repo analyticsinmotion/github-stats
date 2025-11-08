@@ -9506,3 +9506,16 @@ date,repository,views,unique_visitors,clones,unique_cloners
 2025-11-06,julia-packages-data,0,0,5,4
 2025-11-06,werx,0,0,0,0
 2025-11-06,symrank,0,0,0,0
+2025-11-07,chatgpt-python-wrapper,0,0,0,0
+2025-11-07,chatgpt-images-r-shiny,0,0,1,1
+2025-11-07,add-chatgpt-to-microsoft-word,5,3,0,0
+2025-11-07,create-images-with-dall-e-in-microsoft-word,1,1,0,0
+2025-11-07,chatgpt-sentiment-analysis-in-excel,1,1,0,0
+2025-11-07,add-gpt-chatbot-to-microsoft-word,0,0,1,1
+2025-11-07,werpy,3,2,0,0
+2025-11-07,integrate-palm-into-word,1,1,0,0
+2025-11-07,github-stats,1,1,18,9
+2025-11-07,DMARCParser.jl,0,0,1,1
+2025-11-07,julia-packages-data,0,0,3,2
+2025-11-07,werx,0,0,4,3
+2025-11-07,symrank,1,1,0,0
