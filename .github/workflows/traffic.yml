@@ -11,7 +11,8 @@ on:
 #      - main  
       
   schedule:
-    - cron: '45 0 * * *'  # Runs at 12:45am UTC every day
+#    - cron: '45 0 * * *'  # Runs at 12:45am UTC every day
+    - cron: '30 6 * * *'  # Runs at 06:30am UTC every day
 
 jobs:
   extract-data:
@@ -32,3 +33,4 @@ jobs:
         env: 
           TOKEN: ${{ secrets.DATA_TOKEN }}        
         run: python src/traffic.py # Extract GitHub traffic and append to CSV  
+
