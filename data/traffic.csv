@@ -10689,3 +10689,16 @@ date,repository,views,unique_visitors,clones,unique_cloners
 2026-02-05,julia-packages-data,0,0,2,2
 2026-02-05,werx,0,0,0,0
 2026-02-05,symrank,1,1,0,0
+2026-02-06,chatgpt-python-wrapper,0,0,1,1
+2026-02-06,chatgpt-images-r-shiny,3,2,1,1
+2026-02-06,add-chatgpt-to-microsoft-word,4,4,1,1
+2026-02-06,create-images-with-dall-e-in-microsoft-word,2,2,1,1
+2026-02-06,chatgpt-sentiment-analysis-in-excel,0,0,1,1
+2026-02-06,add-gpt-chatbot-to-microsoft-word,2,2,1,1
+2026-02-06,werpy,8,4,8,7
+2026-02-06,integrate-palm-into-word,0,0,1,1
+2026-02-06,github-stats,0,0,0,0
+2026-02-06,DMARCParser.jl,0,0,2,2
+2026-02-06,julia-packages-data,0,0,9,8
+2026-02-06,werx,0,0,0,0
+2026-02-06,symrank,1,1,1,1
