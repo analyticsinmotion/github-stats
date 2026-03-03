@@ -11001,3 +11001,16 @@ date,repository,views,unique_visitors,clones,unique_cloners
 2026-03-01,julia-packages-data,0,0,8,6
 2026-03-01,werx,0,0,1,1
 2026-03-01,symrank,11,3,1,1
+2026-03-02,chatgpt-python-wrapper,1,1,3,2
+2026-03-02,chatgpt-images-r-shiny,0,0,1,1
+2026-03-02,add-chatgpt-to-microsoft-word,4,4,3,3
+2026-03-02,create-images-with-dall-e-in-microsoft-word,0,0,2,2
+2026-03-02,chatgpt-sentiment-analysis-in-excel,1,1,2,1
+2026-03-02,add-gpt-chatbot-to-microsoft-word,4,2,2,2
+2026-03-02,werpy,6,6,0,0
+2026-03-02,integrate-palm-into-word,0,0,1,1
+2026-03-02,github-stats,0,0,32,21
+2026-03-02,DMARCParser.jl,1,1,0,0
+2026-03-02,julia-packages-data,0,0,3,3
+2026-03-02,werx,0,0,0,0
+2026-03-02,symrank,1,1,0,0
